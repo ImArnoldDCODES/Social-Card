@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form'
 
 export default function Create() {
 
-    const [firstName, setFirstName] = useState()
-    const [lastName, setLastName] = useState()
-    const [ig, setIg] = useState()
+    const [firstName, setFirstName] = useState({})
+    const [lastName, setLastName] = useState({})
+    const [ig, setIg] = useState({})
 
     const { register, handleSubmit } = useForm()
 
