@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { NavLink } from 'react-router-dom'
+import Card from '../Card/Card'
 
+export const DataContext = React.createContext()
 export default function Create() {
 
-    const [firstName, setFirstName] = useState({})
-    const [lastName, setLastName] = useState({})
-    const [ig, setIg] = useState({})
+    const [firstName, setFirstName] = useState()
+    const [lastName, setLastName] = useState()
+    const [ig, setIg] = useState()
 
     const { register, handleSubmit } = useForm()
 
@@ -13,7 +16,8 @@ export default function Create() {
         alert(JSON.stringify(f))
     }
 
-    console.log(lastName)
+    console.log(firstName)
+
     
 
     return (
@@ -35,12 +39,17 @@ export default function Create() {
                     <label>Instagram</label>
                     <input placeholder='Instagram Link' onChange={(text) => setIg(text.target.value)}></input>
                 </div>
+
+                <NavLink to="/card">Get Card</NavLink>
                 {/* 
             <div>
             <label>LastName</label>
             <input placeholder='LastName'/>
             </div> */}
             </form>
+            <DataContext.Provider value={firstName}>
+            <Card />
+            </DataContext.Provider>
         </div>
     )
 }
