@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { NavLink } from 'react-router-dom'
 import Card from '../Card/Card'
 
-export const DataContext = React.createContext()
+// export const DataContext = React.createContext()
 export default function Create() {
 
     const [firstName, setFirstName] = useState()
@@ -47,9 +47,9 @@ export default function Create() {
             <input placeholder='LastName'/>
             </div> */}
             </form>
-            <DataContext.Provider value={firstName}>
+            {/* <DataContext.Provider value={firstName}>
             <Card />
-            </DataContext.Provider>
+            </DataContext.Provider> */}
         </div>
     )
 }
