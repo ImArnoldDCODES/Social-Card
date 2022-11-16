@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 const ADD_BIRD = 'ADD_BIRD';
 const INCREMENT_BIRD = 'INCREMENT_BIRD';
+const ADD_FIRSTNAME = 'ADD_FIRSTNAME';
 
 export function addBird(bird) {
   return {
@@ -16,12 +17,26 @@ export function incrementBird(bird) {
   }
 }
 
+export function addFirstname(name) {
+  return {
+    type: ADD_FIRSTNAME,
+    name
+  }
+}
+
 const defaultBirds = [
   {
     name: 'robin',
     views: 1,
   }
 ];
+
+const defaultData = [
+  {
+    firstname: 'hello',
+    id: 1
+  }
+]
 
 function birds(state=defaultBirds, action) {
   switch (action.type) {
@@ -48,8 +63,22 @@ function birds(state=defaultBirds, action) {
   }
 }
 
+function firstname(state=defaultData, action) {
+  switch (action.type) {
+    case ADD_FIRSTNAME :
+      return [
+        ...state,
+        {
+          firstname: action.name
+        }
+      ]
+      default: 
+      return state
+  }
+}
+
 const birdApp = combineReducers({
-  birds
+ firstname
 });
 
 export default birdApp;

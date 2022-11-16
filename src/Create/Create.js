@@ -1,24 +1,34 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { NavLink } from 'react-router-dom'
-import Card from '../Card/Card'
+import { useDispatch } from 'react-redux/es/exports'
+import { createName } from '../features/AddName'
 
-// export const DataContext = React.createContext()
 export default function Create() {
+    // const name = useSelector(state => state.seeName)
 
-    const [firstName, setFirstName] = useState()
+    const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState()
     const [ig, setIg] = useState()
 
     const { register, handleSubmit } = useForm()
 
+    const dispatch = useDispatch()
+
     const onSubmit = (f) => {
         alert(JSON.stringify(f))
     }
 
-    console.log(firstName)
+    // console.log(firstName)
 
-    
+    const handleAdd = (e) => {
+        e.preventDefault()
+        dispatch(createName(firstName))
+        setFirstName('')
+        console.log(firstName)
+    }
+
+
 
     return (
         <div>
@@ -27,8 +37,11 @@ export default function Create() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>FirstName</label>
-                    <input placeholder='FirstName' onChange={text => setFirstName(text.target.value)} />
+                    <input placeholder='FirstName' onChange={text => setFirstName(text.target.value)} 
+                    value={firstName}
+                    />
                 </div>
+                <button onClick={handleAdd}>Add to card</button>
 
                 <div>
                     <label>LastName</label>
@@ -41,15 +54,7 @@ export default function Create() {
                 </div>
 
                 <NavLink to="/card">Get Card</NavLink>
-                {/* 
-            <div>
-            <label>LastName</label>
-            <input placeholder='LastName'/>
-            </div> */}
             </form>
-            {/* <DataContext.Provider value={firstName}>
-            <Card />
-            </DataContext.Provider> */}
         </div>
     )
 }

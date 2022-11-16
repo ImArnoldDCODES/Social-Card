@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
+import store from './store/storeData/store';
 import birdApp from './store/storeData/storeData';
 import { legacy_createStore as createStore} from 'redux'
 // import { createStore } from 'redux';
 
-const store = createStore(birdApp);
+// const store = createStore(birdApp);
+// const store = './store/storeData/store.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
