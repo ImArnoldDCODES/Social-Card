@@ -1,15 +1,20 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 export const AddName = createSlice({
-    name: 'FirstName',
+    name: 'Names',
     initialState: [],
     reducers: {
         createName: (state, action) => {
-            const todo = {
-                id: 1,
-                text: action.payload,
-                // text: 'Arnold',
-            }
+            const todo = [
+                {
+                    id: 1,
+                    firstname: action.payload,
+                },
+                {
+                    id: 2,
+                    lastname: action.lastname
+                }
+            ]
             state.push(todo)
         }
     }

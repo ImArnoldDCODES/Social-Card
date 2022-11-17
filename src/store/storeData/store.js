@@ -3,6 +3,6 @@ import AddName from '../../features/AddName';
 
 export default configureStore({
   reducer: {
-    name: AddName,
+    names: AddName,
   },
 });

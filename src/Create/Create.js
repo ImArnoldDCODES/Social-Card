@@ -20,15 +20,10 @@ export default function Create() {
 
     const {firstname,lastname} = info
 
-    // const handleAdd = (e) => {
-    //     e.preventDefault()
-    //     dispatch(createName(firstName))
-    //     setFirstName('')
-    //     console.log(firstName)
-    // }
-
     const handleAdd = (e) => {
         e.preventDefault()
+        dispatch(createName(info.firstname))
+        // dispatch(createName(info.lastname))
     }
 
     const handleChange = (name, value) => {
@@ -39,7 +34,7 @@ export default function Create() {
         console.log(info)
     }
 
-    // console.log(firstname, lastname)
+    console.log(firstname, lastname)
 
 
     return (
@@ -52,13 +47,13 @@ export default function Create() {
                     <input placeholder='FirstName' onChange={text => handleChange("firstname", text.target.value)}
                     />
                 </div>
-                <button onClick={handleAdd}>Add to card</button>
 
                 <div>
                     <label>LastName</label>
                     <input placeholder='LastName' onChange={(text) => handleChange("lastname", text.target.value)} />
                 </div>
 
+                <button onClick={handleAdd}>Add to card</button>
                 {/* <div>
                     <label>Instagram</label>
                     <input placeholder='Instagram Link' onChange={(text) => setIg(text.target.value)}></input>
