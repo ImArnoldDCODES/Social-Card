@@ -5,29 +5,41 @@ import { useDispatch } from 'react-redux/es/exports'
 import { createName } from '../features/AddName'
 
 export default function Create() {
-    // const name = useSelector(state => state.seeName)
+    const dispatch = useDispatch()
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState()
-    const [ig, setIg] = useState()
+    // const [firstName, setFirstName] = useState('')
+    // const [lastName, setLastName] = useState('')
+    // const [ig, setIg] = useState('')
 
     const { register, handleSubmit } = useForm()
 
-    const dispatch = useDispatch()
+    const [info, setInfo] = useState({
+        firstname: '',
+        lastname: ''
+    })
 
-    const onSubmit = (f) => {
-        alert(JSON.stringify(f))
-    }
+    const {firstname,lastname} = info
 
-    // console.log(firstName)
+    // const handleAdd = (e) => {
+    //     e.preventDefault()
+    //     dispatch(createName(firstName))
+    //     setFirstName('')
+    //     console.log(firstName)
+    // }
 
     const handleAdd = (e) => {
         e.preventDefault()
-        dispatch(createName(firstName))
-        setFirstName('')
-        console.log(firstName)
     }
 
+    const handleChange = (name, value) => {
+        setInfo({
+            ...info,
+            [name]: value,
+        })
+        console.log(info)
+    }
+
+    // console.log(firstname, lastname)
 
 
     return (
@@ -37,21 +49,20 @@ export default function Create() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>FirstName</label>
-                    <input placeholder='FirstName' onChange={text => setFirstName(text.target.value)} 
-                    value={firstName}
+                    <input placeholder='FirstName' onChange={text => handleChange("firstname", text.target.value)}
                     />
                 </div>
                 <button onClick={handleAdd}>Add to card</button>
 
                 <div>
                     <label>LastName</label>
-                    <input placeholder='LastName' onChange={(text) => { setLastName(text.target.value) }} />
+                    <input placeholder='LastName' onChange={(text) => handleChange("lastname", text.target.value)} />
                 </div>
 
-                <div>
+                {/* <div>
                     <label>Instagram</label>
                     <input placeholder='Instagram Link' onChange={(text) => setIg(text.target.value)}></input>
-                </div>
+                </div> */}
 
                 <NavLink to="/card">Get Card</NavLink>
             </form>
