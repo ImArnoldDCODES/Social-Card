@@ -49,6 +49,7 @@
   border-radius: 5px;
   font-family: "Nanum Pen Script";
   font-size: 22px;
+  cursor: pointer;
 }
 .border {
   border: 2px solid brown;
@@ -80,7 +81,7 @@
 }
 .svg {
   /* border: 1px solid #000; */
-  width: 40%;
+  width: 45%;
   height: 36rem;
   /* position: absolute;
   left: 40rem; */
