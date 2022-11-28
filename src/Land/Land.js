@@ -19,11 +19,16 @@ export default function Land() {
             <h4><GrFormCheckmark size={25} className='check' /> <span>Share </span> with others</h4>
           </div>
           <div className='box'></div>
-          <NavLink to='/create'>
+          {/* <NavLink to='/create'>
             <button className='button'>
               Get Started
             </button>
-          </NavLink>
+          </NavLink> */}
+          <button className='button'>
+            <NavLink to='/create' className='nav'>
+                Get Started
+            </NavLink>
+          </button>
         </div>
         <div className='svg'>
           <img src={Man} alt='' />

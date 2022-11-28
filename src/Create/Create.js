@@ -157,7 +157,7 @@ export default function Create() {
                 <button>Get Card</button>
             </NavLink> */}
 
-            <button>
+            <button className='btn'>
                 <NavLink to="/card" className='navlink'>
                     Get Card
                 </NavLink>

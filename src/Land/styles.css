@@ -37,10 +37,10 @@
   font-family: "Plus Jakarta Sans";
   font-style: normal;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 80px;
   color: #c3c6c9;
 }
-.text .button {
+.button {
   border: none;
   margin-top: 2rem;
   background-color: #5790ff;
@@ -103,4 +103,8 @@
   margin-top: -10.8rem;
   margin-left: -0.4rem;
   position: absolute;
+}
+.nav {
+  text-decoration: none;
+  color: #fff;
 }

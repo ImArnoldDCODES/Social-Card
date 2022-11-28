@@ -60,7 +60,7 @@ form div input {
   padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
   box-sizing: content-box;
 }
-.content button {
+.content .btn {
   font-family: "Nanum Pen Script";
   font-size: 22px;
   position: absolute;
