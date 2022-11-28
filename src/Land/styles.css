@@ -1,21 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap");
 .content {
-  background-color: #fff;
+  background-color: rgb(240, 229, 229);
   height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  /* padding: 0 13.3% 0 14%; */
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4% 13.3% 0 14%;
 }
 .text {
-  /* width: 50%;
+  margin: 0 0 0 4rem;
+  /* border: 1px solid blue; */
+  width: 45%;
+}
+.text h1 {
+  width: fit-content;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 84px;
+  color: #5790ff;
+  line-height: 3.5rem;
+  width: 40rem;
+}
+.text h1 span {
+  color: black;
+}
+.text h3 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #c3c6c9;
+}
+.text button {
+  border: none;
+  margin-top: 2rem;
+  background-color: #5790ff;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  font-family: "Nanum Pen Script";
+  font-size: 22px;
+}
+.border {
+  border: 2px solid brown;
+  width: 20rem;
+  background: rgba(132, 162, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.6px);
+  -webkit-backdrop-filter: blur(2.6px);
+  border: 1px solid rgba(132, 162, 255, 0.3);
+  padding-left: 0.6rem;
+}
+.border h4 {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border: 2px solid brown; */
-  /* margin-left: 5rem; */
-
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 18px;
 }
-.text button{
-    border: 2px solid red;  
+.border h4 span {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #5790ff;
+  padding-right: 5px;
 }
-.icon {
-  margin-right: 10rem;
+.svg {
+  /* border: 1px solid #000; */
+  width: 40%;
+  height: 36rem;
+  /* position: absolute;
+  left: 40rem; */
+}
+.svg img {
+  width: 100%;
+  height: 100%;
+}
+.check {
+  color: #5790ff;
+}
+.box {
+  background-color: #5790ff;
+  color: #5790ff;
+  height: 100px;
+  width: 14px;
+  opacity: 0.5;
+  border-radius: 5px;
+  margin-top: -10.8rem;
+  margin-left: -0.4rem;
+  position: absolute;
 }
