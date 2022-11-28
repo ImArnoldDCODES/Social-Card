@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
 import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux/es/exports'
 import { createName } from '../features/AddName'
@@ -7,12 +6,11 @@ import './styles.css'
 
 export default function Create() {
     const dispatch = useDispatch()
+    const [add, setAdd] = useState(false)
 
-    // const [firstName, setFirstName] = useState('')
-    // const [lastName, setLastName] = useState('')
-    // const [ig, setIg] = useState('')
-
-    const { register, handleSubmit } = useForm()
+    const handlebtn = () => {
+        setAdd(true)
+    }
 
     const [info, setInfo] = useState({
         firstname: '',
@@ -32,7 +30,7 @@ export default function Create() {
             ...info,
             [name]: value,
         })
-        console.log(info)
+        // console.log(info)
     }
 
     console.log(firstname, lastname)
@@ -42,7 +40,7 @@ export default function Create() {
         <div className='content'>
             <h3>Create</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className='form-content'>
                     <div>
                         <label>FirstName*</label>
@@ -153,15 +151,14 @@ export default function Create() {
                 </div> */}
                 </div>
             </form>
-            {/* <NavLink to="/card">
-                <button>Get Card</button>
-            </NavLink> */}
 
-            <button className='btn'>
+            <button className='btn' onClick={handleAdd} onClickCapture={handlebtn}>Add Card</button>
+            {add ? <button className='btn'>
                 <NavLink to="/card" className='navlink'>
                     Get Card
                 </NavLink>
-            </button>
+            </button> : null}
+
         </div>
     )
 }

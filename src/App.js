@@ -12,11 +12,11 @@ import {
 function App() {
   return (
     <Router>
-    <Routes>
-    <Route path='/' element={<Land />}/>
-    <Route path='/create' element={<Create />}/>
-    <Route path='/card' element={<Card />}/>
-    </Routes>
+      <Routes>
+        <Route path='/' element={<Land />} />
+        <Route path='/create' element={<Create />} />
+        <Route path='/card' element={<Card />} />
+      </Routes>
     </Router>
   );
 }

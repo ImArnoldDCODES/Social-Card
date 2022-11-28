@@ -5,8 +5,6 @@ import { GrFormCheckmark } from 'react-icons/gr'
 import Man from '../Man.png'
 
 export default function Land() {
-  const style = { color: "white", fontSize: "1.5em" }
-
   return (
     <div className='content'>
       <div className='body'>
@@ -19,14 +17,9 @@ export default function Land() {
             <h4><GrFormCheckmark size={25} className='check' /> <span>Share </span> with others</h4>
           </div>
           <div className='box'></div>
-          {/* <NavLink to='/create'>
-            <button className='button'>
-              Get Started
-            </button>
-          </NavLink> */}
           <button className='button'>
             <NavLink to='/create' className='nav'>
-                Get Started
+              Get Started
             </NavLink>
           </button>
         </div>

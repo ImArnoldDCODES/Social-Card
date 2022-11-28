@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 export const AddName = createSlice({
     name: 'Names',
@@ -21,7 +21,7 @@ export const AddName = createSlice({
 })
 
 // this is for dispatch
-export const {createName} = AddName.actions;
+export const { createName } = AddName.actions;
 
 // this is for Store
 export default AddName.reducer;
