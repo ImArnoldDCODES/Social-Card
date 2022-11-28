@@ -23,7 +23,7 @@ export default function Create() {
     const handleAdd = (e) => {
         e.preventDefault()
         dispatch(createName(info.firstname))
-        // dispatch(createName(info.lastname))
+        dispatch(createName(info.lastname))
     }
 
     const handleChange = (name, value) => {

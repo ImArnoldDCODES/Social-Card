@@ -12,8 +12,8 @@ export const AddName = createSlice({
                 },
                 {
                     id: 2,
-                    lastname: action.lastname
-                }
+                    lastname: action.payload
+                },
             ]
             state.push(todo)
         }
