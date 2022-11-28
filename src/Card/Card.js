@@ -5,6 +5,7 @@ import './styles.css'
 export default function Card() {
 
   const names = useSelector((state) => state.names)
+  console.log(names)
   return (
     <div>
         <h1>Hola</h1>

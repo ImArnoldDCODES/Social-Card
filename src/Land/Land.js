@@ -20,7 +20,7 @@ export default function Land() {
           </div>
           <div className='box'></div>
           <NavLink to='/create'>
-            <button>
+            <button className='button'>
               Get Started
             </button>
           </NavLink>
