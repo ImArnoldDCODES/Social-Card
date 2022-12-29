@@ -16,6 +16,7 @@ export const AddName = createSlice({
                 },
             ]
             state.push(todo)
+            console.log(state)
         }
     }
 })

@@ -11,11 +11,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 4% 13.3% 0 14%;
+  /* padding: 4% 13.3% 0 14%; */
+  padding: 0% 3%;
 }
 .text {
-  margin: 0 0 0 4rem;
-  width: 45%;
+  /* margin: 0 0 0 0; */
+  margin-right: 1rem;
 }
 .text h1 {
   width: fit-content;
@@ -24,12 +25,12 @@
   font-weight: 800;
   font-size: 50px;
   line-height: 84px;
-  color: #5790ff;
   line-height: 3.5rem;
   width: 40rem;
+  color: black;
 }
 .text h1 span {
-  color: black;
+  color: #5790ff;
 }
 .h3 {
   font-family: "Plus Jakarta Sans";
@@ -88,17 +89,7 @@
 .check {
   color: #5790ff;
 }
-.box {
-  background-color: #5790ff;
-  color: #5790ff;
-  height: 100px;
-  width: 14px;
-  opacity: 0.5;
-  border-radius: 5px;
-  margin-top: -10.8rem;
-  margin-left: -0.4rem;
-  position: absolute;
-}
+
 .nav {
   text-decoration: none;
   color: #fff;
