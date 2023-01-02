@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Social-Card/static/css/main.c192df0e.css",
+    "main.js": "/Social-Card/static/js/main.3d0d2de5.js",
+    "static/js/787.4b846e2a.chunk.js": "/Social-Card/static/js/787.4b846e2a.chunk.js",
+    "static/media/Rectangle.svg": "/Social-Card/static/media/Rectangle.1e54c5f84f14ff5ad9535e63d82c1b44.svg",
+    "index.html": "/Social-Card/index.html",
+    "main.c192df0e.css.map": "/Social-Card/static/css/main.c192df0e.css.map",
+    "main.3d0d2de5.js.map": "/Social-Card/static/js/main.3d0d2de5.js.map",
+    "787.4b846e2a.chunk.js.map": "/Social-Card/static/js/787.4b846e2a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c192df0e.css",
+    "static/js/main.3d0d2de5.js"
+  ]
+}
