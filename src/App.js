@@ -13,9 +13,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Land />} />
-        <Route path='/create' element={<Create />} />
-        <Route path='/card' element={<Card />} />
+        <Route path='/Social-Card/land' element={<Land />} />
+        <Route path='/Social-Card/create' element={<Create />} />
+        <Route path='/Social-Card/card' element={<Card />} />
       </Routes>
     </Router>
   );
