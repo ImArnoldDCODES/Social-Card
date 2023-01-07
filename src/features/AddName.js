@@ -4,13 +4,15 @@ export const AddName = createSlice({
   name: "user",
   initialState: {
     firstname: null,
-    lastname: null
+    lastname: null,
+    facebook: null
   },
   reducers: {
     setUser: (state, action) => {
       console.log("action", action)
       state.firstname = action.payload?.firstname;
       state.lastname = action.payload?.lastname;
+      state.facebook = action.payload?.facebook;
     }
   }
 });

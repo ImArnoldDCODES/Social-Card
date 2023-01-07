@@ -2,6 +2,15 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../features/AddName';
 import './styles.css'
+import facebook from '../images/facebook.svg'
+import snapchat from '../images/snapchat.svg'
+import github from '../images/github.svg'
+import instagram from '../images/instagram.svg'
+import link from '../images/link.svg'
+import pink from '../images/pink.svg'
+import reddit from '../images/redit.svg'
+import twitter from '../images/twitter.svg'
+import youtube from '../images/youtube.svg'
 
 export default function Card() {
 
@@ -17,7 +26,7 @@ export default function Card() {
   return (
     <div className='container'>
 
-      <div class="temp-wrapper">
+      <div className="temp-wrapper">
         <div className="px">
           <div className="px__body">
             <div className="px__body__cut"></div>
@@ -42,6 +51,19 @@ export default function Card() {
                     <span className='names'>
                       <h2>{details?.firstname}</h2>
                       <h2>{details?.lastname}</h2>
+                    </span>
+                    <span className='socials'>
+                      <a href={details?.facebook}>
+                      <img src={facebook} alt='facebook'></img>
+                      </a>
+                      <img src={github} alt='github'></img>
+                      <img src={instagram} alt='instagram'></img>
+                      <img src={link} alt='linkedin'></img>
+                      <img src={pink} alt='pinkterest'></img>
+                      <img src={reddit} alt='reddit'></img>
+                      <img src={snapchat} alt='snapchat'></img>
+                      <img src={twitter} alt='twitter'></img>
+                      <img src={youtube} alt='youtube'></img>
                     </span>
                   </div>
                 </div>

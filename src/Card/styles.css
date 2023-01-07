@@ -364,6 +364,7 @@
   background-color: #0085ff;
   font-size: 3rem;
   margin-top: 1rem;
+  color: white;
 }
 .details {
 }
@@ -372,4 +373,19 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+
+.card .details .socials{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 2.3rem;
+  row-gap: 1rem;
+  padding: 0 35px;
+  cursor: pointer;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+}
+.socials{
+  
 }

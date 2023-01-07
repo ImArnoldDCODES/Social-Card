@@ -19,12 +19,14 @@ export default function Create() {
 
     const [info, setInfo] = useState({
         firstname: null,
-        lastname: null
+        lastname: null,
+        facebook: null
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInfo({ ...info, [name]: value });
+        console.log(info)
     };
 
     const handleSubmit = (e) => {
@@ -52,100 +54,99 @@ export default function Create() {
 
                     <div>
                         <label>Instagram</label>
-                        <input placeholder='Instagram' onChange={(text) => handleChange("instagram", text.target.value)} />
+                        <input placeholder='Instagram' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Facebook</label>
-                        <input placeholder='Facebook' onChange={(text) => handleChange("facebook", text.target.value)} />
+                        <input placeholder='Facebook' name='facebook' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Twitter</label>
-                        <input placeholder='Twitter' onChange={(text) => handleChange("twitter", text.target.value)} />
+                        <input placeholder='Twitter' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Linkedin</label>
-                        <input placeholder='Linkedin' onChange={(text) => handleChange("linkedin", text.target.value)} />
+                        <input placeholder='Linkedin' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Pinterest</label>
-                        <input placeholder='Pinterest' onChange={(text) => handleChange("pinterest", text.target.value)} />
+                        <input placeholder='Pinterest'onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Youtube</label>
-                        <input placeholder='Youtube' onChange={(text) => handleChange("youtube", text.target.value)} />
+                        <input placeholder='Youtube' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Snapchat</label>
-                        <input placeholder='Snapchat' onChange={(text) => handleChange("snapchat", text.target.value)} />
+                        <input placeholder='Snapchat'onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Reddit</label>
-                        <input placeholder='Reddit' onChange={(text) => handleChange("reddit", text.target.value)} />
+                        <input placeholder='Reddit'onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>TikTok</label>
-                        <input placeholder='TikTok' onChange={(text) => handleChange("tiktok", text.target.value)} />
+                        <input placeholder='TikTok' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Github</label>
-                        <input placeholder='Github' onChange={(text) => handleChange("github", text.target.value)} />
+                        <input placeholder='Github' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Medium</label>
-                        <input placeholder='Medium' onChange={(text) => handleChange("medium", text.target.value)} />
+                        <input placeholder='Medium'onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Mix</label>
-                        <input placeholder='Mix' onChange={(text) => handleChange("mix", text.target.value)} />
+                        <input placeholder='Mix' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Twitch</label>
-                        <input placeholder='Twitch' onChange={(text) => handleChange("twitch", text.target.value)} />
+                        <input placeholder='Twitch'onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Telegram</label>
-                        <input placeholder='Telegram' onChange={(text) => handleChange("telegram", text.target.value)} />
+                        <input placeholder='Telegram' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Discord</label>
-                        <input placeholder='Discord' onChange={(text) => handleChange("discord", text.target.value)} />
+                        <input placeholder='Discord' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Behance</label>
-                        <input placeholder='Behance' onChange={(text) => handleChange("behance", text.target.value)} />
+                        <input placeholder='Behance' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Dribble</label>
-                        <input placeholder='Dribble' onChange={(text) => handleChange("dribble", text.target.value)} />
+                        <input placeholder='Dribble' onChange={handleChange} />
                     </div>
 
-                    {/* <button onClick={handleAdd}>Add to card</button> */}
-                    {/* <div>
+                    <div>
                     <label>Instagram</label>
-                    <input placeholder='Instagram Link' onChange={(text) => setIg(text.target.value)}></input>
-                </div> */}
+                    <input placeholder='Instagram'onChange={handleChange} /> 
+                </div>
                 </div>
             </form>
 
