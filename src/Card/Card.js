@@ -16,10 +16,55 @@ export default function Card() {
 
   return (
     <div className='container'>
-      <div className='card'>
-        <h2>{details?.firstname}</h2>
-        <h2>{details?.lastname}</h2>
+
+      <div class="temp-wrapper">
+        <div className="px">
+          <div className="px__body">
+            <div className="px__body__cut"></div>
+            <div className="px__body__speaker"></div>
+            <div className="px__body__sensor"></div>
+
+            <div className="px__body__mute"></div>
+            <div className="px__body__up"></div>
+            <div className="px__body__down"></div>
+            <div className="px__body__right"></div>
+          </div>
+
+          <div className="px__screen">
+            <div className="px__screen__">
+              <div className="px__screen__frame" style={{ backgroundImage: ('https://thestraightshooterband.com/image/8989-full_oboi-oboi-macbook-oboi-iphone-4k-5k-macbook-pro-iphone.jpg') }}>
+                <i className="fa fa-apple"></i>
+                <div className='card'>
+                  <div className='logo'>
+                    <span>{details?.firstname.charAt(0)}</span>
+                  </div>
+                  <div className='details'>
+                    <span className='names'>
+                      <h2>{details?.firstname}</h2>
+                      <h2>{details?.lastname}</h2>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="temp-wrapper2 temp-wrapper--wide">
+        <div className='card'>
+          <div className='logo'>
+            <span>{details?.firstname.charAt(0)}</span>
+          </div>
+          <div className='details'>
+            <span className='names'>
+              <h2>{details?.firstname}</h2>
+              <h2>{details?.lastname}</h2>
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }
