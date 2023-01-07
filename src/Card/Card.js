@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { selectUser } from '../features/AddName';
 import './styles.css'
 
 export default function Card() {
@@ -10,23 +11,14 @@ export default function Card() {
     setFile(URL.createObjectURL(e.target.files[0]));
   }
 
-  const names = useSelector((state) => state.names)
-  console.log(names)
+  const details = useSelector(selectUser)
+  console.log(details)
+
   return (
     <div className='container'>
       <div className='card'>
-        {names.map((details, index) => (
-          <div key={index}>
-            {/* <h3>{details.firstname}</h3>*/}
-            {/* <h2>{details[0].lastname}</h2>  */}
-            <h1>{details[0].firstname}</h1>
-
-          </div>
-        ))}
-        {/* <h2>Add Image:</h2>
-        <input type="file" onChange={handleChange} />
-        <img src={file} alt='' /> */}
-
+        <h2>{details?.firstname}</h2>
+        <h2>{details?.lastname}</h2>
       </div>
     </div>
   )

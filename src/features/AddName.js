@@ -1,28 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const AddName = createSlice({
-    name: 'Names',
-    initialState: [],
+    name: "user",
+    initialState: {
+      firstname: null,
+      lastname: null
+    },
     reducers: {
-        createName: (state, action) => {
-            const todo = [
-                {
-                    id: 1,
-                    firstname: action.payload,
-                },
-                {
-                    id: 2,
-                    lastname: action.payload
-                },
-            ]
-            state.push(todo)
-            console.log(state)
-        }
+      setUser: (state, action) => {
+        console.log("action", action)
+        state.firstname = action.payload?.firstname;
+        state.lastname = action.payload?.lastname;
+      }
     }
-})
+  });
 
-// this is for dispatch
-export const { createName } = AddName.actions;
-
-// this is for Store
-export default AddName.reducer;
+    export const {setUser} = AddName.actions
+    export const selectUser = (state) => state?.user;
+    export default AddName.reducer;

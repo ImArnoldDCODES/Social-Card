@@ -1,3 +1,6 @@
+// this was for practice
+
+
 import { combineReducers } from 'redux';
 const ADD_BIRD = 'ADD_BIRD';
 const INCREMENT_BIRD = 'INCREMENT_BIRD';

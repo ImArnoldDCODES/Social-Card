@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux/es/exports'
-import { createName } from '../features/AddName'
+import { selectUser, setUser } from '../features/AddName'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
 import './styles.css'
 
 export default function Create() {
@@ -12,45 +13,41 @@ export default function Create() {
         setAdd(true)
     }
 
+    const details = useSelector(selectUser)
+    console.log("details", details)
+
+
     const [info, setInfo] = useState({
-        firstname: '',
-        lastname: ''
-    })
+        firstname: null,
+        lastname: null
+    });
 
-    const { firstname, lastname } = info
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setInfo({ ...info, [name]: value });
+    };
 
-    const handleAdd = (e) => {
-        e.preventDefault()
-        dispatch(createName(info.firstname))
-        // dispatch(createName(info.lastname))
-    }
-
-    const handleChange = (name, value) => {
-        setInfo({
-            ...info,
-            [name]: value,
-        })
-        // console.log(info)
-    }
-
-    console.log(firstname, lastname)
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // set data to store on submit
+        dispatch(setUser(info));
+    };
 
     return (
         <div className='content'>
             <h3>Create</h3>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='form-content'>
                     <div>
                         <label>FirstName*</label>
-                        <input placeholder='FirstName' onChange={text => handleChange("firstname", text.target.value)}
+                        <input placeholder='FirstName' name='firstname' onChange={handleChange}
                         />
                     </div>
 
                     <div>
                         <label>LastName*</label>
-                        <input placeholder='LastName' onChange={(text) => handleChange("lastname", text.target.value)} />
+                        <input placeholder='LastName' name='lastname' onChange={handleChange} />
                     </div>
 
                     <div>
@@ -152,7 +149,7 @@ export default function Create() {
                 </div>
             </form>
 
-            <button className='btn' onClick={handleAdd} onClickCapture={handlebtn}>Add Card</button>
+            <button className='btn' onClick={handleSubmit} onClickCapture={handlebtn}>Add Card</button>
             {add ? <button className='btn'>
                 <NavLink to="/card" className='navlink'>
                     Get Card
