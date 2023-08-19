@@ -1,7 +1,3 @@
-.temp-wrapper {
-  margin: 20px;
-}
-
 @media screen and (max-width: 487px) {
   .temp-wrapper .px__screen {
     display: none;
@@ -32,6 +28,8 @@
 @media all and (min-width: 768px) {
   .temp-wrapper {
     width: 33.33337%;
+    height: fit-content;
+    padding: 0;
   }
 
   .temp-wrapper--wide {
@@ -316,7 +314,7 @@
   background-color: white;
   border-radius: 10%/5%;
 }
-
+z6
 .px--ls .px__screen__ {
   padding-bottom: 46%;
   border-radius: 5%/10%;
@@ -350,42 +348,73 @@
   justify-content: center;
 }
 .card {
-  margin-top: 2rem;
+  margin-top: 1rem;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 .logo {
-  padding: 3% 6%;
+  padding: 5% 6%;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-self: center;
-  background-color: #0085ff;
+  background-color: #4276a7;
   font-size: 3rem;
   margin-top: 1rem;
   color: white;
-}
-.details {
 }
 .details .names {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
-.card .details .socials{
+.card .details .socials {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   column-gap: 2.3rem;
   row-gap: 1rem;
   padding: 0 35px;
   cursor: pointer;
+  margin-top: 1rem;
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
 }
-.socials{
-  
+.socials {
+}
+.circle {
+  content: "";
+  height: 11rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: rgb(146, 52, 52);
+  position: relative;
+  margin-left: -20%;
+  margin-bottom: auto;
+}
+.circle2 {
+  content: "";
+  height: 11rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: rgb(148, 55, 55);
+  position: relative;
+  margin-left: 70%;
+}
+
+
+.oop{
+  position: relative;
+  background-color: #e5e5e5;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: -50%;
+  bottom: 0;
 }

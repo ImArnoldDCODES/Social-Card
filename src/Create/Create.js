@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux/es/exports'
 import { selectUser, setUser } from '../features/AddName'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import './styles.css'
+import db from '../firebase/config'
+import { collection, addDoc, updateDoc } from "firebase/firestore"; 
 
 export default function Create() {
     const dispatch = useDispatch()
@@ -20,7 +22,22 @@ export default function Create() {
     const [info, setInfo] = useState({
         firstname: null,
         lastname: null,
-        facebook: null
+        facebook: null,
+        github: null,
+        instagram: null,
+        linkedin: null,
+        pinkterest: null,
+        reddit: null,
+        snapchat: null,
+        twitter: null,
+        youtube: null,
+        tiktok: null,
+        medium: null,
+        twitch: null,
+        telegram: null,
+        discord: null,
+        behance: null,
+        dribble: null,
     });
 
     const handleChange = (e) => {
@@ -33,7 +50,22 @@ export default function Create() {
         e.preventDefault();
         // set data to store on submit
         dispatch(setUser(info));
-    };
+
+        // const docRef = addDoc(collection(db, "links"), {
+        //    info
+        //   });
+        //   console.log("Document written with ID: ", docRef.id);
+
+        // const q = query(collection(database, "links"))
+        // const unsub = onSnapshot(q, (querySnapshot) => {
+        //     console.log("Data", querySnapshot.docs.map(d => doc.data()));
+        // });
+
+        // database.ref("user").set({
+        //   name : 'Arnold',
+        //   age : 17,
+        // }).catch(alert);
+    }
 
     return (
         <div className='content'>
@@ -54,7 +86,7 @@ export default function Create() {
 
                     <div>
                         <label>Instagram</label>
-                        <input placeholder='Instagram' onChange={handleChange} />
+                        <input placeholder='Instagram' name='instagram' onChange={handleChange} />
                     </div>
 
                     <div>
@@ -65,88 +97,88 @@ export default function Create() {
 
                     <div>
                         <label>Twitter</label>
-                        <input placeholder='Twitter' onChange={handleChange} />
+                        <input placeholder='Twitter' name='twitter' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Linkedin</label>
-                        <input placeholder='Linkedin' onChange={handleChange} />
+                        <input placeholder='Linkedin' name='linkedin' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Pinterest</label>
-                        <input placeholder='Pinterest'onChange={handleChange} />
+                        <input placeholder='Pinterest' name='pinkterest' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Youtube</label>
-                        <input placeholder='Youtube' onChange={handleChange} />
+                        <input placeholder='Youtube' name='youtube' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Snapchat</label>
-                        <input placeholder='Snapchat'onChange={handleChange} />
+                        <input placeholder='Snapchat' name='snapchat' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Reddit</label>
-                        <input placeholder='Reddit'onChange={handleChange} />
+                        <input placeholder='Reddit' name='reddit' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>TikTok</label>
-                        <input placeholder='TikTok' onChange={handleChange} />
+                        <input placeholder='TikTok' name='tiktok' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Github</label>
-                        <input placeholder='Github' onChange={handleChange} />
+                        <input placeholder='Github' name='github' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Medium</label>
-                        <input placeholder='Medium'onChange={handleChange} />
+                        <input placeholder='Medium' name='medium' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Mix</label>
-                        <input placeholder='Mix' onChange={handleChange} />
+                        <input placeholder='Mix' name='mix' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Twitch</label>
-                        <input placeholder='Twitch'onChange={handleChange} />
+                        <input placeholder='Twitch' name='twitch' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Telegram</label>
-                        <input placeholder='Telegram' onChange={handleChange} />
+                        <input placeholder='Telegram' name='telegram' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Discord</label>
-                        <input placeholder='Discord' onChange={handleChange} />
+                        <input placeholder='Discord' name='discord' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Behance</label>
-                        <input placeholder='Behance' onChange={handleChange} />
+                        <input placeholder='Behance' name='behance' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Dribble</label>
-                        <input placeholder='Dribble' onChange={handleChange} />
+                        <input placeholder='Dribble' name='dribble' onChange={handleChange} />
                     </div>
 
                     <div>
-                    <label>Instagram</label>
-                    <input placeholder='Instagram'onChange={handleChange} /> 
-                </div>
+                        <label>Instagram</label>
+                        <input placeholder='Instagram' name='instagram' onChange={handleChange} />
+                    </div>
                 </div>
             </form>
 
