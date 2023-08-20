@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux/es/exports'
 import { selectUser, setUser } from '../features/AddName'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 import './styles.css'
 import db from '../firebase/config'
-import { collection, addDoc, updateDoc } from "firebase/firestore"; 
+import { collection, addDoc, updateDoc } from "firebase/firestore";
 
 export default function Create() {
     const dispatch = useDispatch()
@@ -66,6 +66,12 @@ export default function Create() {
         //   age : 17,
         // }).catch(alert);
     }
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate('/card');
+    };
 
     return (
         <div className='content'>
@@ -182,13 +188,11 @@ export default function Create() {
                 </div>
             </form>
 
-            <button className='btn' onClick={handleSubmit} onClickCapture={handlebtn}>Add Card</button>
-            {add ? <button className='btn'>
+            <button className='btn' onClick={handleSubmit} onClickCapture={handlebtn}>
                 <NavLink to="/card" className='navlink'>
-                    Get Card
+                    Add Card
                 </NavLink>
-            </button> : null}
-
+            </button>
         </div>
     )
 }
