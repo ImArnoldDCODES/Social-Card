@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux/es/exports'
-import { createName } from '../features/AddName'
+import { selectUser, setUser } from '../features/AddName'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
 import './styles.css'
+import db from '../firebase/config'
+import { collection, addDoc, updateDoc } from "firebase/firestore";
 
 export default function Create() {
     const dispatch = useDispatch()
@@ -12,153 +15,184 @@ export default function Create() {
         setAdd(true)
     }
 
+    const details = useSelector(selectUser)
+    console.log("details", details)
+
+
     const [info, setInfo] = useState({
-        firstname: '',
-        lastname: ''
-    })
+        firstname: null,
+        lastname: null,
+        facebook: null,
+        github: null,
+        instagram: null,
+        linkedin: null,
+        pinkterest: null,
+        reddit: null,
+        snapchat: null,
+        twitter: null,
+        youtube: null,
+        tiktok: null,
+        medium: null,
+        twitch: null,
+        telegram: null,
+        discord: null,
+        behance: null,
+        dribble: null,
+    });
 
-    const { firstname, lastname } = info
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setInfo({ ...info, [name]: value });
+        console.log(info)
+    };
 
-    const handleAdd = (e) => {
-        e.preventDefault()
-        dispatch(createName(info.firstname))
-        // dispatch(createName(info.lastname))
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // set data to store on submit
+        dispatch(setUser(info));
+
+        // const docRef = addDoc(collection(db, "links"), {
+        //    info
+        //   });
+        //   console.log("Document written with ID: ", docRef.id);
+
+        // const q = query(collection(database, "links"))
+        // const unsub = onSnapshot(q, (querySnapshot) => {
+        //     console.log("Data", querySnapshot.docs.map(d => doc.data()));
+        // });
+
+        // database.ref("user").set({
+        //   name : 'Arnold',
+        //   age : 17,
+        // }).catch(alert);
     }
 
-    const handleChange = (name, value) => {
-        setInfo({
-            ...info,
-            [name]: value,
-        })
-        // console.log(info)
-    }
+    const navigate = useNavigate()
 
-    console.log(firstname, lastname)
-
+    const handleClick = () => {
+        navigate('/card');
+    };
 
     return (
         <div className='content'>
             <h3>Create</h3>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='form-content'>
                     <div>
                         <label>FirstName*</label>
-                        <input placeholder='FirstName' onChange={text => handleChange("firstname", text.target.value)}
+                        <input placeholder='FirstName' name='firstname' onChange={handleChange}
                         />
                     </div>
 
                     <div>
                         <label>LastName*</label>
-                        <input placeholder='LastName' onChange={(text) => handleChange("lastname", text.target.value)} />
+                        <input placeholder='LastName' name='lastname' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Instagram</label>
-                        <input placeholder='Instagram' onChange={(text) => handleChange("instagram", text.target.value)} />
+                        <input placeholder='Instagram' name='instagram' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Facebook</label>
-                        <input placeholder='Facebook' onChange={(text) => handleChange("facebook", text.target.value)} />
+                        <input placeholder='Facebook' name='facebook' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Twitter</label>
-                        <input placeholder='Twitter' onChange={(text) => handleChange("twitter", text.target.value)} />
+                        <input placeholder='Twitter' name='twitter' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Linkedin</label>
-                        <input placeholder='Linkedin' onChange={(text) => handleChange("linkedin", text.target.value)} />
+                        <input placeholder='Linkedin' name='linkedin' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Pinterest</label>
-                        <input placeholder='Pinterest' onChange={(text) => handleChange("pinterest", text.target.value)} />
+                        <input placeholder='Pinterest' name='pinkterest' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Youtube</label>
-                        <input placeholder='Youtube' onChange={(text) => handleChange("youtube", text.target.value)} />
+                        <input placeholder='Youtube' name='youtube' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Snapchat</label>
-                        <input placeholder='Snapchat' onChange={(text) => handleChange("snapchat", text.target.value)} />
+                        <input placeholder='Snapchat' name='snapchat' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Reddit</label>
-                        <input placeholder='Reddit' onChange={(text) => handleChange("reddit", text.target.value)} />
+                        <input placeholder='Reddit' name='reddit' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>TikTok</label>
-                        <input placeholder='TikTok' onChange={(text) => handleChange("tiktok", text.target.value)} />
+                        <input placeholder='TikTok' name='tiktok' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Github</label>
-                        <input placeholder='Github' onChange={(text) => handleChange("github", text.target.value)} />
+                        <input placeholder='Github' name='github' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Medium</label>
-                        <input placeholder='Medium' onChange={(text) => handleChange("medium", text.target.value)} />
+                        <input placeholder='Medium' name='medium' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Mix</label>
-                        <input placeholder='Mix' onChange={(text) => handleChange("mix", text.target.value)} />
+                        <input placeholder='Mix' name='mix' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Twitch</label>
-                        <input placeholder='Twitch' onChange={(text) => handleChange("twitch", text.target.value)} />
+                        <input placeholder='Twitch' name='twitch' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Telegram</label>
-                        <input placeholder='Telegram' onChange={(text) => handleChange("telegram", text.target.value)} />
+                        <input placeholder='Telegram' name='telegram' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Discord</label>
-                        <input placeholder='Discord' onChange={(text) => handleChange("discord", text.target.value)} />
+                        <input placeholder='Discord' name='discord' onChange={handleChange} />
                     </div>
 
                     <div>
                         <label>Behance</label>
-                        <input placeholder='Behance' onChange={(text) => handleChange("behance", text.target.value)} />
+                        <input placeholder='Behance' name='behance' onChange={handleChange} />
                     </div>
 
 
                     <div>
                         <label>Dribble</label>
-                        <input placeholder='Dribble' onChange={(text) => handleChange("dribble", text.target.value)} />
+                        <input placeholder='Dribble' name='dribble' onChange={handleChange} />
                     </div>
 
-                    {/* <button onClick={handleAdd}>Add to card</button> */}
-                    {/* <div>
-                    <label>Instagram</label>
-                    <input placeholder='Instagram Link' onChange={(text) => setIg(text.target.value)}></input>
-                </div> */}
+                    <div>
+                        <label>Instagram</label>
+                        <input placeholder='Instagram' name='instagram' onChange={handleChange} />
+                    </div>
                 </div>
             </form>
 
-            <button className='btn' onClick={handleAdd} onClickCapture={handlebtn}>Add Card</button>
-            {add ? <button className='btn'>
+            <button className='btn' onClick={handleSubmit} onClickCapture={handlebtn}>
                 <NavLink to="/card" className='navlink'>
-                    Get Card
+                    Add Card
                 </NavLink>
-            </button> : null}
-
+            </button>
         </div>
     )
 }

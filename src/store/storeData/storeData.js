@@ -1,3 +1,6 @@
+// this was for practice
+
+
 import { combineReducers } from 'redux';
 const ADD_BIRD = 'ADD_BIRD';
 const INCREMENT_BIRD = 'INCREMENT_BIRD';
@@ -38,7 +41,7 @@ const defaultData = [
   }
 ]
 
-function birds(state=defaultBirds, action) {
+function birds(state = defaultBirds, action) {
   switch (action.type) {
     case ADD_BIRD:
       return [
@@ -63,22 +66,22 @@ function birds(state=defaultBirds, action) {
   }
 }
 
-function firstname(state=defaultData, action) {
+function firstname(state = defaultData, action) {
   switch (action.type) {
-    case ADD_FIRSTNAME :
+    case ADD_FIRSTNAME:
       return [
         ...state,
         {
           firstname: action.name
         }
       ]
-      default: 
+    default:
       return state
   }
 }
 
 const birdApp = combineReducers({
- firstname
+  firstname
 });
 
 export default birdApp;
